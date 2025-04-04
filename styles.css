@@ -1,124 +1,180 @@
-/* Variáveis tema claro */
-:root {
-    --bg: #ffffff;
-    --text: #333;
-    --header-bg: #2c3e50;
-    --section-bg: #f9f9f9;
-    --link: #0077cc;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 1rem;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Botão de alternância de tema */
+.theme-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  font-size: 0.9rem;
+  z-index: 1000;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+section {
+  background-color: white;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.icones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+}
+
+.icones a {
+  color: #222;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icones a:hover {
+  color: #007BFF;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+.dark-mode section {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.dark-mode nav a {
+  color: #ccc;
+}
+
+.dark-mode .theme-btn {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.dark-mode .icones a {
+  color: #e4e4e4;
+}
+
+.dark-mode .icones a:hover {
+  color: #4ea1ff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
   }
-  
-  /* Tema escuro */
-  body.dark {
-    --bg: #1e1e1e;
-    --text: #f0f0f0;
-    --header-bg: #121212;
-    --section-bg: #2a2a2a;
-    --link: #1e90ff;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 1rem;
-  }
-  
-  header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: var(--header-bg);
-    color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  .perfil {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
-  
+
   nav a {
-    color: #f0f0f0;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 1rem;
+    border-top: 1px solid #444;
   }
-  
-  nav a:hover {
-    color: #ffd700;
-  }
-  
-  section {
-    background: var(--section-bg);
-    margin: 2rem 0;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  
-  h2 {
-    margin-top: 0;
-    color: var(--text);
-  }
-  
-  a {
-    color: var(--link);
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .icones a {
-    font-size: 1.8rem;
-    margin: 0 1rem;
-    color: var(--link);
-    transition: transform 0.3s;
-  }
-  
-  .icones a:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Botão de tema */
-  .theme-btn {
-    position: fixed;
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
     top: 1rem;
-    right: 1rem;
-    background: var(--header-bg);
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
+    left: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    font-size: 1rem;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: white;
   }
-  
-  /* Responsivo */
-  @media (max-width: 600px) {
-    .perfil {
-      width: 90px;
-      height: 90px;
-    }
-  
-    nav a {
-      display: block;
-      margin: 0.5rem 0;
-    }
+
+  nav.show {
+    display: flex;
   }
-  
+}
+
+.menu-toggle {
+  display: none;
+}

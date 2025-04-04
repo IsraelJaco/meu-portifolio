@@ -6,22 +6,27 @@
   <title>Meu Portfólio</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Botão de alternância de tema -->
   <button id="theme-toggle" class="theme-btn">🌙 Modo Escuro</button>
 
   <div class="container">
     <header>
-      <img src="img/is2.jpg" alt="Foto de perfil" class="perfil" />
-      <h1>Israel Jacó</h1>
-      <p>Desenvolvedor Web | Apaixonado por Tecnologia</p>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-      </nav>
+      <div class="topo">
+        <img src="img/is2.jpg" alt="Foto de perfil" class="perfil" />
+        <h1>Israel Jacó</h1>
+        <p>Desenvolvedor Web | Apaixonado por Tecnologia</p>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -42,16 +47,15 @@
         <h2>Contatos</h2>
         <div class="icones">
           <a href="mailto:israljacojaco5@email.com" target="_blank">
-            <i class="fas fa-envelope"></i> israljacojaco5@email.com
+            <i class="fas fa-envelope"></i> Email
           </a>
           <a href="https://www.linkedin.com/in/seuusuario" target="_blank">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
           <a href="https://github.com/IsraelJaco" target="_blank">
-            <i class="fab fa-github"></i> IsraelJacó
+            <i class="fab fa-github"></i> GitHub
           </a>
         </div>
-        
       </section>
     </main>
   </div>
